@@ -3,7 +3,7 @@ Documentation      Manages the all the common functionalities such as
 ...     browser, report, customized keywords to support Web UI automation
 
 Library     SeleniumLibrary
-
+Variables   ../../Configuration/time-config.yaml
 
 *** Variables ***
 ${BROWSER_NAME}     chrome
@@ -16,16 +16,15 @@ Launch Browser And Navigate To Url
     ...     | Launch Browser And Navigate To Url |
     Open Browser    browser=${BROWSER_NAME}
     Maximize Browser Window
-    Set Selenium Implicit Wait    10s
-    Set Selenium Timeout    30s
+    Set Selenium Implicit Wait    ${medium_timeout}s
+    Set Selenium Timeout    ${default_timeout}s
     Go To    ${URL}
-
 
 Click Interactable Element
     [Documentation]     Use this keyword to click on interactable element \n
     ...     Example \n
     ...     | Click Interactable Element |  xpath=//button[@id='email'] |  30s |
-    [Arguments]     ${locator}   ${timeout}=30s
+    [Arguments]     ${locator}   ${timeout}=${default_timeout}s
     Wait Until Page Contains Element    ${locator}      ${timeout}
     Wait Until Element Is Visible    ${locator}      ${timeout}
     Wait Until Element Is Enabled    ${locator}      ${timeout}
@@ -36,7 +35,5 @@ Click Until Element Succeed
         ...    with retries
         ...     | Click Until Element Succeed |  xpath=//button[@id='email'] |  30s |  1s |
         ...     | Click Until Element Succeed |  xpath=//button[@id='email'] |
-    [Arguments]     ${locator}      ${retry}=30s    ${retry_interval}=0.5s
+    [Arguments]     ${locator}      ${retry}=${default_retries}s    ${retry_interval}=${small_retry_interval}s
     Wait Until Keyword Succeeds    ${retry}     ${retry_interval}     Click Element    ${locator}
-
-    
