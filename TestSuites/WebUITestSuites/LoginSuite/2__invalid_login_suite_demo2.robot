@@ -6,9 +6,19 @@ Resource    ../../../Resource/UI/CommonFunctionalities.resource
 Test Setup      Launch Browser And Navigate To Url
 Test Teardown   Close Browser
 
+Test Template    Invalid Login Template
+
 *** Test Cases ***
-Verify Invalid Login Test
-    Input Text    name=username    john
-    Input Password    name=password    admin123
+TC1
+    john    john123     Invalid credentials
+
+TC2
+    saul    saul123     Invalid credentials
+
+*** Keywords ***
+Invalid Login Template
+    [Arguments]     ${username}     ${password}     ${expected_error}
+    Input Text    name=username    ${username}
+    Input Password    name=password    ${password}
     Click Element    xpath=//button[contains(normalize-space(),'Login')]
-    Element Should Contain    xpath=//p[contains(normalize-space(),'Invalid')]    Invalid credentials
+    Element Should Contain    xpath=//p[contains(normalize-space(),'Invalid')]    ${expected_error}
