@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 7.4.2 (Python 3.14.3 on win32)" generated="2026-04-02T16:27:56.744526" rpa="false" schemaversion="5">
+<suite id="s1" name="6 Data Yaml Suite" source="C:\AutomationSession\AutomationFramework\TestSuites\WebUITestSuites\LoginSuite\6_data_yaml_suite.robot">
+<test id="s1-t1" name="TC1" line="10">
+<kw name="Launch Browser And Navigate To Url" owner="CommonFunctionalities" type="SETUP">
+<kw name="Open Browser" owner="SeleniumLibrary">
+<msg time="2026-04-02T16:27:57.010217" level="INFO">Opening browser 'edge' to base url 'None'.</msg>
+<arg>browser=${BROWSER_NAME}</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<status status="PASS" start="2026-04-02T16:27:57.009958" elapsed="0.744973"/>
+</kw>
+<kw name="Maximize Browser Window" owner="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" start="2026-04-02T16:27:57.755159" elapsed="0.072255"/>
+</kw>
+<kw name="Set Selenium Implicit Wait" owner="SeleniumLibrary">
+<arg>${medium_timeout}s</arg>
+<doc>Sets the implicit wait value used by Selenium.</doc>
+<status status="PASS" start="2026-04-02T16:27:57.827619" elapsed="0.001235"/>
+</kw>
+<kw name="Set Selenium Timeout" owner="SeleniumLibrary">
+<arg>${default_timeout}s</arg>
+<doc>Sets the timeout that is used by various keywords.</doc>
+<status status="PASS" start="2026-04-02T16:27:57.829050" elapsed="0.000924"/>
+</kw>
+<kw name="Go To" owner="SeleniumLibrary">
+<msg time="2026-04-02T16:27:57.830259" level="INFO">Opening url 'https://opensource-demo.orangehrmlive.com/'</msg>
+<arg>${URL}</arg>
+<doc>Navigates the current browser window to the provided ``url``.</doc>
+<status status="PASS" start="2026-04-02T16:27:57.830133" elapsed="5.655578"/>
+</kw>
+<doc>Use this keyword to launch browser and navigate to url 
+Example 
+| Launch Browser And Navigate To Url |</doc>
+<status status="PASS" start="2026-04-02T16:27:57.009222" elapsed="6.476647"/>
+</kw>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>${BROWSER_NAME}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2026-04-02T16:28:03.486550" elapsed="0.000789"/>
+</kw>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>${BASE_URL}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2026-04-02T16:28:03.487590" elapsed="0.000415"/>
+</kw>
+<kw name="Close Browser" owner="SeleniumLibrary" type="TEARDOWN">
+<doc>Closes the current browser.</doc>
+<status status="PASS" start="2026-04-02T16:28:03.488362" elapsed="2.214437"/>
+</kw>
+<status status="PASS" start="2026-04-02T16:27:57.008478" elapsed="8.694998"/>
+</test>
+<status status="PASS" start="2026-04-02T16:27:56.747459" elapsed="8.956812"/>
+</suite>
+<statistics>
+<total>
+<stat pass="1" fail="0" skip="0">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat name="6 Data Yaml Suite" id="s1" pass="1" fail="0" skip="0">6 Data Yaml Suite</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>

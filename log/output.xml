@@ -1,0 +1,142 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 7.4.2 (Python 3.14.3 on win32)" generated="2026-04-02T16:43:48.151382" rpa="false" schemaversion="5">
+<suite id="s1" name="Valid Login Suite" source="C:\AutomationSession\AutomationFramework\TestSuites\WebUITestSuites\LoginSuite\1__valid_login_suite.robot">
+<test id="s1-t1" name="Verify Valid Login Test" line="11">
+<kw name="Launch Browser And Navigate To Url" owner="CommonFunctionalities" type="SETUP">
+<kw name="Open Browser" owner="SeleniumLibrary">
+<msg time="2026-04-02T16:43:53.977650" level="INFO">Opening browser 'chrome' to base url 'None'.</msg>
+<arg>browser=${BROWSER_NAME}</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<status status="PASS" start="2026-04-02T16:43:53.975280" elapsed="1.875914"/>
+</kw>
+<kw name="Maximize Browser Window" owner="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" start="2026-04-02T16:43:55.852309" elapsed="0.027568"/>
+</kw>
+<kw name="Set Selenium Implicit Wait" owner="SeleniumLibrary">
+<arg>${medium_timeout}s</arg>
+<doc>Sets the implicit wait value used by Selenium.</doc>
+<status status="PASS" start="2026-04-02T16:43:55.880606" elapsed="0.004829"/>
+</kw>
+<kw name="Set Selenium Timeout" owner="SeleniumLibrary">
+<arg>${default_timeout}s</arg>
+<doc>Sets the timeout that is used by various keywords.</doc>
+<status status="PASS" start="2026-04-02T16:43:55.886129" elapsed="0.003806"/>
+</kw>
+<kw name="Go To" owner="SeleniumLibrary">
+<msg time="2026-04-02T16:43:55.891526" level="INFO">Opening url 'https://opensource-demo.orangehrmlive.com/'</msg>
+<arg>${URL}</arg>
+<doc>Navigates the current browser window to the provided ``url``.</doc>
+<status status="PASS" start="2026-04-02T16:43:55.890578" elapsed="5.944701"/>
+</kw>
+<doc>Use this keyword to launch browser and navigate to url 
+Example 
+| Launch Browser And Navigate To Url |</doc>
+<status status="PASS" start="2026-04-02T16:43:48.985317" elapsed="12.850798"/>
+</kw>
+<kw name="Enter Username" owner="LoginPage">
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2026-04-02T16:44:10.883753" level="INFO">Typing text 'Admin' into text field 'name=username'.</msg>
+<arg>${username_locator}</arg>
+<arg>${username}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2026-04-02T16:44:04.627250" elapsed="6.358692"/>
+</kw>
+<arg>Admin</arg>
+<doc>Types the given text into the Username field
+Examples:
+| Enter Username | Admin |
+| Enter Username | John |</doc>
+<status status="PASS" start="2026-04-02T16:44:01.838328" elapsed="9.148512"/>
+</kw>
+<kw name="Enter Password" owner="LoginPage">
+<kw name="Input Password" owner="SeleniumLibrary">
+<msg time="2026-04-02T16:44:13.382447" level="INFO">Typing password into text field 'name=password'.</msg>
+<msg time="2026-04-02T16:44:13.418992" level="INFO">Temporally setting log level to: NONE</msg>
+<arg>${PASSWORD_LOCATOR}</arg>
+<arg>${password}</arg>
+<doc>Types the given password into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2026-04-02T16:44:12.555030" elapsed="0.911845"/>
+</kw>
+<arg>admin123</arg>
+<doc>Types the given text into the Password field
+Examples:
+| Enter Password | Admin |
+| Enter Password | John |</doc>
+<status status="PASS" start="2026-04-02T16:44:10.987795" elapsed="2.479702"/>
+</kw>
+<kw name="Click Login" owner="LoginPage">
+<kw name="Click Interactable Element" owner="CommonFunctionalities">
+<kw name="Wait Until Page Contains Element" owner="SeleniumLibrary">
+<arg>${locator}</arg>
+<arg>${timeout}</arg>
+<doc>Waits until the element ``locator`` appears on the current page.</doc>
+<status status="PASS" start="2026-04-02T16:44:17.012122" elapsed="1.211159"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${locator}</arg>
+<arg>${timeout}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2026-04-02T16:44:18.224007" elapsed="0.723581"/>
+</kw>
+<kw name="Wait Until Element Is Enabled" owner="SeleniumLibrary">
+<arg>${locator}</arg>
+<arg>${timeout}</arg>
+<doc>Waits until the element ``locator`` is enabled.</doc>
+<status status="PASS" start="2026-04-02T16:44:18.948386" elapsed="0.576629"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2026-04-02T16:44:20.281512" level="INFO">Clicking element 'xpath=//button[normalize-space()='Login']'.</msg>
+<arg>${locator}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2026-04-02T16:44:19.525727" elapsed="0.820179"/>
+</kw>
+<arg>${LOGIN_LOCATOR}</arg>
+<doc>Use this keyword to click on interactable element 
+Example 
+| Click Interactable Element |  xpath=//button[@id='email'] |  30s |</doc>
+<status status="PASS" start="2026-04-02T16:44:15.217287" elapsed="5.129223"/>
+</kw>
+<doc>Clicks on the login button
+Examples:
+| Click Login  |</doc>
+<status status="PASS" start="2026-04-02T16:44:13.468259" elapsed="6.878668"/>
+</kw>
+<kw name="Validate Invalid Login Error Message" owner="LoginPage">
+<kw name="Element Text Should Be" owner="SeleniumLibrary">
+<msg time="2026-04-02T16:44:24.226264" level="INFO">Verifying element 'xpath=//p[contains(normalize-space(),'Invalid')]' contains exact text 'Time at Work'.</msg>
+<msg time="2026-04-02T16:44:34.335379" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-3.png"&gt;&lt;img src="selenium-screenshot-3.png" width="800px"&gt;&lt;/a&gt;</msg>
+<msg time="2026-04-02T16:44:34.336291" level="FAIL">Element with locator 'xpath=//p[contains(normalize-space(),'Invalid')]' not found.</msg>
+<arg>${ERROR_LOCATOR}</arg>
+<arg>${expected_error}</arg>
+<doc>Verifies that element ``locator`` contains exact the text ``expected``.</doc>
+<status status="FAIL" start="2026-04-02T16:44:22.161868" elapsed="12.231663">Element with locator 'xpath=//p[contains(normalize-space(),'Invalid')]' not found.</status>
+</kw>
+<arg>Time at Work</arg>
+<doc>Verifies the invalid error message.
+Examples:
+| Validate Invalid Login Error Message | Invalid Username name |</doc>
+<status status="FAIL" start="2026-04-02T16:44:20.347708" elapsed="14.047294">Element with locator 'xpath=//p[contains(normalize-space(),'Invalid')]' not found.</status>
+</kw>
+<kw name="Close Browser" owner="SeleniumLibrary" type="TEARDOWN">
+<doc>Closes the current browser.</doc>
+<status status="PASS" start="2026-04-02T16:44:34.396518" elapsed="5.479638"/>
+</kw>
+<status status="FAIL" start="2026-04-02T16:43:48.980948" elapsed="50.895722">Element with locator 'xpath=//p[contains(normalize-space(),'Invalid')]' not found.</status>
+</test>
+<doc>Test Suite valides all valid login scenario</doc>
+<status status="FAIL" start="2026-04-02T16:43:48.187124" elapsed="51.692370"/>
+</suite>
+<statistics>
+<total>
+<stat pass="0" fail="1" skip="0">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat name="Valid Login Suite" id="s1" pass="0" fail="1" skip="0">Valid Login Suite</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>
